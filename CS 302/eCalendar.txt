@@ -1,0 +1,15 @@
+Cray Jaeger
+CAJ2585
+eCalendar.txt
+
+set days = user input “How many days would you like to plan for”
+set info = empty array
+for i in range(days)
+	prompt and add user input for “Major Event” into info[]
+set day = -1
+while day is not 0
+	prompt user to input day they want to hear about and set this value to day
+	if day isn’t 0
+		print major event on day
+	else
+		print bye

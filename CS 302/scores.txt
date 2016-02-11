@@ -1,0 +1,49 @@
+Cray Jaeger
+CAJ2585
+Score.txt
+
+set scores = to empty array
+for i in range(0,7,1)
+	set score = user input(ask for number between 0-10)
+		while score is not between 0 and 10
+			set score = user input(ask for number between 0-10)
+	add score to the scores[] array
+print “The highest score after discarding the highest score of:”
+		[RUN getMaxScore with input of scores[] and return of the highest score]
+	“ and the lowest score of:”
+		[RUN getLowestScore with input of scores[] and return of the lowest score]
+	
+	“is: “
+		[RUN getAverageScore with input of scores[] and return of the average]
+
+
+getMaxScore Module (input = array of numbers)
+	set scores[] = array of numbers passed in
+	set maximum = first number in scores[]
+	for i in scores
+		if i > maximum
+			set maximum = i
+	RETURN = maximum
+	
+getLowestScore Module (input = array of numbers)
+	set scores[] = array of numbers passed in
+	set minimum = first number in scores[]
+	for i in scores
+		if i < minimum
+			set minimum = i
+	RETURN =  minimum
+
+getAverageScore Module (input = array of numbers)
+	set scores[] = array of numbers passed in
+	set average = 0.0
+	for i in scores
+		set average = average + i
+	set average = average - [RUN getLowestScore with input = scores[] & return = minScore]
+	set average = average - [RUN getMaxScore with input = scores[] & return = maxScore]
+	set average = average / 5
+	
+	RETURN AVERAGE
+
+	
+	
+	
